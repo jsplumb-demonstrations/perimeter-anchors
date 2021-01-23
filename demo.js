@@ -1,6 +1,6 @@
-jsPlumb.ready(function () {
+jsPlumbBrowserUI.ready(function () {
 
-    var instance = jsPlumb.newInstance({
+    var instance = jsPlumbBrowserUI.newInstance({
         connector: "StateMachine",
         paintStyle: { strokeWidth: 3, stroke: "#ffa500", "dashstyle": "2 4" },
         endpoint: [ "Dot", { radius: 5 } ],

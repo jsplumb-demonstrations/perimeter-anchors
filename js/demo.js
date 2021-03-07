@@ -3,7 +3,7 @@ jsPlumbBrowserUI.ready(function () {
     var instance = jsPlumbBrowserUI.newInstance({
         connector: "StateMachine",
         paintStyle: { strokeWidth: 3, stroke: "#ffa500", "dashstyle": "2 4" },
-        endpoint: [ "Dot", { radius: 5 } ],
+        endpoint: { type:"Dot", options:{ radius: 5 } },
         endpointStyle: { fill: "#ffa500" },
         container: canvas
     });
@@ -22,8 +22,8 @@ jsPlumbBrowserUI.ready(function () {
                     // here we supply a different anchor for source and for target, and we get the element's "data-shape"
                     // attribute to tell us what shape we should use, as well as, optionally, a rotation value.
                     anchors: [
-                        [ "Perimeter", { shape: shapes[i].getAttribute("data-shape"), rotation: shapes[i].getAttribute("data-rotation") }],
-                        [ "Perimeter", { shape: shapes[j].getAttribute("data-shape"), rotation: shapes[j].getAttribute("data-rotation") }]
+                        { type:"Perimeter", options:{ shape: shapes[i].getAttribute("data-shape"), rotation: shapes[i].getAttribute("data-rotation") }},
+                        { type:"Perimeter", options:{ shape: shapes[j].getAttribute("data-shape"), rotation: shapes[j].getAttribute("data-rotation") }}
                     ]
                 });
             }

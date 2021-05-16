@@ -1,5 +1,5 @@
 import { newInstance, ready } from "@jsplumb/browser-ui"
-import { StateMachineConnector, DotEndpoint, AnchorOptions } from "@jsplumb/core"
+import { StateMachineConnector, DotEndpoint, AnchorOptions, PerimeterAnchorOptions } from "@jsplumb/core"
 
 ready(() => {
 
@@ -21,8 +21,8 @@ ready(() => {
         // loop through them and connect each one to each other one.
         for (let i = 0; i < shapes.length; i++) {
             for (let j = i + 1; j < shapes.length; j++) {
-                const sourceOptions:AnchorOptions = { shape: shapes[i].getAttribute("data-shape"), rotation: shapes[i].getAttribute("data-rotation") }
-                const targetOptions:AnchorOptions = { shape: shapes[j].getAttribute("data-shape"), rotation: shapes[j].getAttribute("data-rotation") }
+                const sourceOptions = { shape: shapes[i].getAttribute("data-shape"), rotation: shapes[i].getAttribute("data-rotation") } as PerimeterAnchorOptions
+                const targetOptions = { shape: shapes[j].getAttribute("data-shape"), rotation: shapes[j].getAttribute("data-rotation") } as PerimeterAnchorOptions
                 instance.connect({
                     source: shapes[i],  // just pass in the current node in the selector for source
                     target: shapes[j],
